@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwnfbsf41xhib"]
+
+[ext_resource type="Texture2D" uid="uid://dnk44kxogp4u6" path="res://assets/kenney_pixel-platformer/Tilemap/tilemap-characters_packed.png" id="1_cof0i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihwft"]
+atlas = ExtResource("1_cof0i")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3g6o"]
+atlas = ExtResource("1_cof0i")
+region = Rect2(96, 48, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcpde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihwft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3g6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Roomba" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_kcpde")
+frame_progress = 0.72429866

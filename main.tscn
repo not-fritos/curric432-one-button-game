@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4c8nkkjlie0s"]
+
+[ext_resource type="PackedScene" uid="uid://bxpi4pexs3raq" path="res://npc.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cwnfbsf41xhib" path="res://roomba.tscn" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bceb0g6d0qfqq" path="res://walls.tscn" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://1cgjuf3ei7h1" path="res://floors.tscn" id="4_1bvp3"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Npc" parent="." instance=ExtResource("1_h2yge")]
+z_index = 98
+position = Vector2(39, -43)
+
+[node name="Roomba" parent="." instance=ExtResource("2_1bvp3")]
+z_index = 99
+position = Vector2(143, -36)
+
+[node name="Walls" parent="." instance=ExtResource("3_lquwl")]
+
+[node name="Floors" parent="." instance=ExtResource("4_1bvp3")]
