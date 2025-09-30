@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf6n20qb8r1pc"]
+
+[ext_resource type="Script" uid="uid://bvm5j7jslx45f" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Texture2D" uid="uid://od8s37p27l0" path="res://icon.svg" id="2_kh24r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ul7y6"]
+radius = 19.026299
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxcha"]
+radius = 19.000002
+
+[node name="npc" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_xxcha")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+visibility_layer = 0
+shape = SubResource("CircleShape2D_ul7y6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2890625, 1)
+texture = ExtResource("2_kh24r")
+
+[node name="LifeTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = -0.06888275
+shape = SubResource("CircleShape2D_xxcha")
+
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]

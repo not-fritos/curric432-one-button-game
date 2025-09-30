@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://sy6obgtp1un7"]
+
+[ext_resource type="Texture2D" uid="uid://od8s37p27l0" path="res://icon.svg" id="1_cof0i"]
+[ext_resource type="Script" uid="uid://780r0lo2g2n3" path="res://roomba.gd" id="1_ihwft"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihwft"]
+radius = 32.140316
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3g6o"]
+radius = 32.0
+
+[node name="Roomba" type="CharacterBody2D"]
+script = ExtResource("1_ihwft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ihwft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.48000157, 0.5199994)
+texture = ExtResource("1_cof0i")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 12
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t3g6o")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
