@@ -71,7 +71,7 @@ position = Vector2(548, 413)
 script = ExtResource("3_tlwt5")
 
 [node name="Timer" type="Timer" parent="EnemySpawner"]
-wait_time = 0.09
+wait_time = 0.05
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("roomba")]

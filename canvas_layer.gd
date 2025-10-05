@@ -1,8 +1,8 @@
 extends CanvasLayer
 
-@export var slow_scale: float = 0.35
-@export var drain_per_sec: float = 0.45
-@export var refill_per_sec: float = 0.38
+@export var slow_scale: float = 0.05
+@export var drain_per_sec: float = 0.15
+@export var refill_per_sec: float = 0.68
 @export var rotate_speed: float = .3
 
 @onready var bar: ProgressBar   = $"Control/MarginContainer/ProgressBar"
@@ -31,9 +31,11 @@ func _process(delta: float) -> void:
 		if charge <= 0.0:
 			Globals.TIME_MOD = 1.0
 		else:
+			roomba.SPEED = 0
 			roomba.rotate(rotate_speed * delta)
 	else:
 		Globals.TIME_MOD = 1.0
+		roomba.SPEED = 255
 		if charge < 1.0:
 			charge = min(1.0, charge + refill_per_sec * delta)
 			_update_bar()
