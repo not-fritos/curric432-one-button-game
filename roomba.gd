@@ -1,12 +1,10 @@
 extends CharacterBody2D
 
-@export var SPEED = 15;
+@export var SPEED = 255;
 signal score_increment;
 
-func _ready() -> void:
-	velocity = Vector2(150, 100); #Starting Velocity
-
 func _physics_process(delta: float) -> void:
+	velocity = transform.x * SPEED
 	var collision = move_and_collide(velocity * delta);
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
