@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://sy6obgtp1un7"]
+[gd_scene load_steps=7 format=3 uid="uid://sy6obgtp1un7"]
 
-[ext_resource type="Script" path="res://roomba.gd" id="1_ihwft"]
+[ext_resource type="Script" uid="uid://780r0lo2g2n3" path="res://roomba.gd" id="1_ihwft"]
 [ext_resource type="Texture2D" uid="uid://dnk44kxogp4u6" path="res://assets/kenney_pixel-platformer/Tilemap/tilemap-characters_packed.png" id="2_ihwft"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ihwft"]
-radius = 32.140316
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ihwft"]
+radius = 19.997536
+height = 47.994083
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t3g6o"]
 atlas = ExtResource("2_ihwft")
@@ -28,14 +29,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_t3g6o"]
-radius = 32.0
-
 [node name="Roomba" type="CharacterBody2D"]
 script = ExtResource("1_ihwft")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ihwft")
+[node name="bump" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.0000005)
+rotation = -1.5865043
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CapsuleShape2D_ihwft")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
@@ -46,7 +47,9 @@ frame_progress = 0.85195315
 collision_layer = 12
 collision_mask = 12
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_t3g6o")
+[node name="hitbox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3.0000005)
+rotation = -1.5865043
+shape = SubResource("CapsuleShape2D_ihwft")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

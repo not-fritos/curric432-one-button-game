@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 @export var SPEED = 255;
 signal score_increment;
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 func _physics_process(delta: float) -> void:
+	sprite_2d.play("default")
 	velocity = transform.x * SPEED
 	var collision = move_and_collide(velocity * delta);
 	if collision:
