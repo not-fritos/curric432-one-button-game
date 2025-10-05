@@ -66,12 +66,13 @@ texture = ExtResource("1_aqk2v")
 
 [node name="Roomba" parent="." instance=ExtResource("1_f3sb7")]
 position = Vector2(548, 413)
+SPEED = null
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 script = ExtResource("3_tlwt5")
 
 [node name="Timer" type="Timer" parent="EnemySpawner"]
-wait_time = 0.09
+wait_time = 0.17
 autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("roomba")]
