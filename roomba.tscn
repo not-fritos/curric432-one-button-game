@@ -1,29 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwnfbsf41xhib"]
+[gd_scene load_steps=5 format=3 uid="uid://sy6obgtp1un7"]
 
-[ext_resource type="Texture2D" uid="uid://dnk44kxogp4u6" path="res://assets/kenney_pixel-platformer/Tilemap/tilemap-characters_packed.png" id="1_cof0i"]
+[ext_resource type="Texture2D" uid="uid://od8s37p27l0" path="res://icon.svg" id="1_cof0i"]
+[ext_resource type="Script" uid="uid://780r0lo2g2n3" path="res://roomba.gd" id="1_ihwft"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ihwft"]
-atlas = ExtResource("1_cof0i")
-region = Rect2(72, 48, 24, 24)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ihwft"]
+radius = 32.140316
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t3g6o"]
-atlas = ExtResource("1_cof0i")
-region = Rect2(96, 48, 24, 24)
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3g6o"]
+radius = 32.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kcpde"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ihwft")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t3g6o")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[node name="Roomba" type="CharacterBody2D"]
+script = ExtResource("1_ihwft")
 
-[node name="Roomba" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_kcpde")
-frame_progress = 0.72429866
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ihwft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.48000157, 0.5199994)
+texture = ExtResource("1_cof0i")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 12
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t3g6o")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
