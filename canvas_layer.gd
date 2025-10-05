@@ -10,7 +10,7 @@ extends CanvasLayer
 
 @export var roomba: CharacterBody2D 
 
-var charge := 1.0 
+var charge := 1.0
 var score := 0
 var _keys_down := 0 
 
@@ -62,3 +62,7 @@ func _update_score() -> void:
 func _on_roomba_score_increment() -> void:
 	score = score + 1
 	_update_score()
+
+
+func _on_double_click_detector_double_click() -> void:
+	roomba.rotate(PI)
