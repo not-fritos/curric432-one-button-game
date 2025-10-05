@@ -1,13 +1,14 @@
 extends CanvasLayer
 
-# --- knobs ---
 @export var slow_scale: float = 0.35
 @export var drain_per_sec: float = 0.45
 @export var refill_per_sec: float = 0.38
+@export var rotate_speed: float = .3
 
-# UI paths from your screenshot
 @onready var bar: ProgressBar   = $"Control/MarginContainer/ProgressBar"
 @onready var score_label: Label = $"Control/TopBar/ScoreLabel"
+
+@export var roomba: CharacterBody2D 
 
 var charge := 1.0 
 var score := 0
@@ -25,9 +26,12 @@ func _process(delta: float) -> void:
 		Globals.TIME_MOD = slow_scale
 		charge = max(0.0, charge - drain_per_sec * delta)
 		_update_bar()
+		
 
 		if charge <= 0.0:
 			Globals.TIME_MOD = 1.0
+		else:
+			roomba.rotate(rotate_speed * delta)
 	else:
 		Globals.TIME_MOD = 1.0
 		if charge < 1.0:
@@ -52,7 +56,6 @@ func _update_bar() -> void:
 func _update_score() -> void:
 	if score_label:
 		score_label.text = "Score: %d" % score
-
 
 func _on_roomba_score_increment() -> void:
 	score = score + 1

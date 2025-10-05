@@ -12,10 +12,9 @@ func _on_timer_timeout() -> void:
 	
 
 func _get_spawn_pos() -> Vector2:
-	var rect := get_viewport().get_visible_rect()  # screen rect in global coords
+	var rect := get_viewport().get_visible_rect()
 
-	# --- Pick a spawn point just outside one edge ---
-	var side = randi_range(0, 3)  # 0=top, 1=right, 2=bottom, 3=left
+	var side = randi_range(0, 3)
 	var spawn_pos = Vector2.ZERO
 	match side:
 		0: # top

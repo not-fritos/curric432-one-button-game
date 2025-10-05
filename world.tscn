@@ -71,11 +71,13 @@ position = Vector2(548, 413)
 script = ExtResource("3_tlwt5")
 
 [node name="Timer" type="Timer" parent="EnemySpawner"]
-wait_time = 0.17
+wait_time = 0.09
 autostart = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("roomba")]
 script = ExtResource("4_aqk2v")
+rotate_speed = 3.0
+roomba = NodePath("../Roomba")
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
