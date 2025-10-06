@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bf6n20qb8r1pc"]
 
-[ext_resource type="Script" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Script" uid="uid://bvm5j7jslx45f" path="res://npc.gd" id="1_xxcha"]
 [ext_resource type="Texture2D" uid="uid://dnk44kxogp4u6" path="res://assets/kenney_pixel-platformer/Tilemap/tilemap-characters_packed.png" id="2_xxcha"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ul7y6"]

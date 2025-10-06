@@ -2,10 +2,14 @@ extends CharacterBody2D
 
 @export var speed: float = 300.0
 @export var trail_timer: float = 1.
+@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
 
 var time_elapsed: float = 0
 
 var trail_scene = preload("res://trail.tscn")
+
+func _draw() -> void:
+	play_random_animation()
 
 func _physics_process(delta: float) -> void:
 	time_elapsed += delta * Globals.TIME_MOD
@@ -20,3 +24,11 @@ func _physics_process(delta: float) -> void:
 
 func _on_life_timer_timeout() -> void:
 	queue_free()
+
+
+func play_random_animation():
+	var animation_names := sprite_2d.sprite_frames.get_animation_names()
+	if(!len(animation_names)):
+		return
+	var random_ani_name = animation_names[randi() % animation_names.size()]
+	sprite_2d.play(random_ani_name)
