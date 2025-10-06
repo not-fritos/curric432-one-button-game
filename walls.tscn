@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=4 uid="uid://bceb0g6d0qfqq"]
+[gd_scene load_steps=6 format=3 uid="uid://cwfd0h0fmpy10"]
 
 [ext_resource type="Texture2D" uid="uid://k2042bnbisjx" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="1_0ugm7"]
+[ext_resource type="Texture2D" uid="uid://1064wmpp1jeu" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x3.png" id="2_jt0p1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqaso"]
 texture = ExtResource("1_0ugm7")
@@ -92,11 +93,21 @@ texture_region_size = Vector2i(32, 32)
 7:10/0 = 0
 8:10/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftpcs"]
+texture = ExtResource("2_jt0p1")
+texture_region_size = Vector2i(96, 96)
+use_texture_padding = false
+8:10/0 = 0
+7:10/0 = 0
+6:10/0 = 0
+6:9/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_uuaxm"]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vqaso")
+sources/1 = SubResource("TileSetAtlasSource_ftpcs")
 
 [node name="Walls" type="TileMapLayer"]
 z_index = 1
-tile_map_data = PackedByteArray("AAACAP//AAAMAAUAAAADAP//AAAGAAEAAAADAP7/AAAJAAIAAAADAP3/AAAJAAIAAAAAAPz/AAAFAAAAAAABAPz/AAAFAAAAAAACAPz/AAAFAAAAAAADAPz/AAAFAAAAAAAEAPz/AAAFAAAAAAAFAPz/AAAFAAAAAAAGAPz/AAAHAAAAAAAHAPz/AAAFAAAAAAAIAPz/AAAIAAAAAAAIAP3/AAAJAAIAAAAIAP7/AAAJAAIAAAAIAP//AAAJAAIAAAAGAP3/AAAJAAIAAAAGAP7/AAAJAAIAAAAGAP//AAAJAAIAAAA=")
 tile_set = SubResource("TileSet_uuaxm")
