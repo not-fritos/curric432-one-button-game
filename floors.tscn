@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=4 uid="uid://1cgjuf3ei7h1"]
+
+[ext_resource type="Texture2D" uid="uid://k2042bnbisjx" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x1.png" id="1_ffyv4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k6cl7"]
+texture = ExtResource("1_ffyv4")
+texture_region_size = Vector2i(32, 32)
+64:2/0 = 0
+65:2/0 = 0
+66:2/0 = 0
+67:2/0 = 0
+68:2/0 = 0
+69:2/0 = 0
+70:2/0 = 0
+64:3/0 = 0
+65:3/0 = 0
+66:3/0 = 0
+67:3/0 = 0
+68:3/0 = 0
+69:3/0 = 0
+70:3/0 = 0
+64:4/0 = 0
+65:4/0 = 0
+64:5/0 = 0
+65:5/0 = 0
+32:1/0 = 0
+33:1/0 = 0
+34:1/0 = 0
+35:1/0 = 0
+32:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6mv4r"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_k6cl7")
+
+[node name="Floors" type="Node2D"]
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAP//AAAhAAEAAAACAP//AAAhAAEAAAACAP7/AAAiAAEAAAABAP7/AAAiAAEAAAAAAP7/AAAhAAEAAAAAAP//AAAhAAEAAAADAP//AAAiAAEAAAADAP7/AAAiAAEAAAAAAP3/AAAhAAEAAAABAP3/AAAiAAEAAAACAP3/AAAiAAEAAAADAP3/AAAiAAEAAAAEAP3/AAAiAAEAAAAEAP7/AAAiAAEAAAAEAP//AAAiAAEAAAAFAP//AAAiAAEAAAAGAP//AAAiAAEAAAAGAP7/AAAhAAEAAAAGAP3/AAAiAAEAAAAFAP3/AAAiAAEAAAAFAP7/AAAiAAEAAAA=")
+tile_set = SubResource("TileSet_6mv4r")
+collision_enabled = false
