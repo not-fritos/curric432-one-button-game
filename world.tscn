@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://5ppqgtck477u"]
+[gd_scene load_steps=17 format=4 uid="uid://5ppqgtck477u"]
 
 [ext_resource type="PackedScene" uid="uid://sy6obgtp1un7" path="res://roomba.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://djmtfk478wmj6" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x2.png" id="2_dwbse"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://dktvigvj58yju" path="res://audio/music/Background Music 3.wav" id="7_wse8f"]
 [ext_resource type="AudioStream" uid="uid://cnwkwxna8fhcl" path="res://audio/music/DEFEAT Music_fx_short_retro_arcade_chiptune_instrume.wav" id="8_ic0uy"]
 [ext_resource type="AudioStream" uid="uid://dwvgm6glkimel" path="res://audio/music/MAIN MENU Music_fx_retro_arcade_chiptune_instrumental_f.wav" id="9_k3n1d"]
+[ext_resource type="Script" uid="uid://bf0cq1hekd23b" path="res://enemy_despawner.gd" id="12_k3n1d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7yv"]
 size = Vector2(108, 2196)
@@ -212,6 +213,9 @@ layout_mode = 2
 
 [node name="bg_music-1" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamRandomizer_gbfbk")
+
+[node name="EnemyDespawner" type="Node2D" parent="."]
+script = ExtResource("12_k3n1d")
 
 [connection signal="score_increment" from="Roomba" to="CanvasLayer" method="_on_roomba_score_increment"]
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
