@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dv6aty6dkw3mc"]
+[gd_scene load_steps=15 format=3 uid="uid://dv6aty6dkw3mc"]
 
 [ext_resource type="Script" uid="uid://7c6do8t6j4ua" path="res://trail.gd" id="1_abn3g"]
 [ext_resource type="Texture2D" uid="uid://mk7sqllkwgv7" path="res://assets/kenney_sci-fi-rts/Tilesheet/scifi_tilesheet@2.png" id="2_abn3g"]
@@ -15,6 +15,14 @@ region = Rect2(0, 640, 128, 128)
 atlas = ExtResource("2_abn3g")
 region = Rect2(0, 512, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_abn3g"]
+atlas = ExtResource("2_abn3g")
+region = Rect2(640, 768, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc8ct"]
+atlas = ExtResource("2_abn3g")
+region = Rect2(512, 768, 128, 128)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_oj2j6"]
 atlas = ExtResource("2_abn3g")
 region = Rect2(128, 640, 128, 128)
@@ -27,14 +35,6 @@ region = Rect2(256, 640, 128, 128)
 atlas = ExtResource("2_abn3g")
 region = Rect2(384, 640, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfp7d"]
-atlas = ExtResource("2_abn3g")
-region = Rect2(512, 640, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ymkae"]
-atlas = ExtResource("2_abn3g")
-region = Rect2(640, 640, 128, 128)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_33roa"]
 atlas = ExtResource("2_abn3g")
 region = Rect2(128, 512, 128, 128)
@@ -46,18 +46,6 @@ region = Rect2(256, 512, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_m2ecm"]
 atlas = ExtResource("2_abn3g")
 region = Rect2(384, 512, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vc2vd"]
-atlas = ExtResource("2_abn3g")
-region = Rect2(512, 512, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ydd4"]
-atlas = ExtResource("2_abn3g")
-region = Rect2(640, 512, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mc8ct"]
-atlas = ExtResource("2_abn3g")
-region = Rect2(512, 768, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1nd3w"]
 animations = [{
@@ -79,43 +67,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_saw2u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oj2j6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pm6l8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4iqpo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cfp7d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ymkae")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qiah0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_33roa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e2fil")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m2ecm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vc2vd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ydd4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mc8ct")
+"texture": SubResource("AtlasTexture_abn3g")
 }],
 "loop": true,
 "name": &"default_2",
@@ -191,6 +143,7 @@ shape = SubResource("CapsuleShape2D_abn3g")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_1nd3w")
+animation = &"default_2"
 
 [node name="LifeTimer" type="Timer" parent="."]
 wait_time = 30.0
