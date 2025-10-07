@@ -7,7 +7,7 @@ extends CanvasLayer
 
 @onready var bar: ProgressBar   = $"Control/MarginContainer/ProgressBar"
 @onready var score_label: Label = $"Control/TopBar/ScoreLabel"
-@onready var bg_music: AudioStreamPlayer = $"../bg_music"
+@onready var bg_music: AudioStreamPlayer = $"../bg_music-1"
 
 @export var roomba: CharacterBody2D 
 
