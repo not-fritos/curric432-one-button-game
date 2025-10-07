@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://5ppqgtck477u"]
+[gd_scene load_steps=9 format=4 uid="uid://5ppqgtck477u"]
 
 [ext_resource type="PackedScene" uid="uid://sy6obgtp1un7" path="res://roomba.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://djmtfk478wmj6" path="res://assets/Tech Dungeon Roguelite - Asset Pack (DEMO)/tileset x2.png" id="2_dwbse"]
 [ext_resource type="Script" uid="uid://8ix7eqt5y5fk" path="res://enemy_spawner.gd" id="3_tlwt5"]
-[ext_resource type="Script" path="res://canvas_layer.gd" id="4_aqk2v"]
+[ext_resource type="Script" uid="uid://dv86im2xmu88m" path="res://canvas_layer.gd" id="4_aqk2v"]
+[ext_resource type="AudioStream" uid="uid://ch2a43hevom5v" path="res://audio/music/Background Music 1.wav" id="5_036b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7yv"]
 size = Vector2(108, 2196)
@@ -192,6 +193,9 @@ scale = Vector2(2, 2)
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Control/MarginContainer"]
 layout_mode = 2
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_036b0")
 
 [connection signal="score_increment" from="Roomba" to="CanvasLayer" method="_on_roomba_score_increment"]
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
