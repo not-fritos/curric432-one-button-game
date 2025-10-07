@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cnwkwxna8fhcl"
+path="res://.godot/imported/DEFEAT Music_fx_short_retro_arcade_chiptune_instrume.wav-db50dba5ccffe64bca90f4f2324e6b97.sample"
+
+[deps]
+
+source_file="res://audio/music/DEFEAT Music_fx_short_retro_arcade_chiptune_instrume.wav"
+dest_files=["res://.godot/imported/DEFEAT Music_fx_short_retro_arcade_chiptune_instrume.wav-db50dba5ccffe64bca90f4f2324e6b97.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
