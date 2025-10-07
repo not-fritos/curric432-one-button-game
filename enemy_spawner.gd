@@ -1,7 +1,7 @@
 extends Node2D
 
 var npc_scene = preload("res://npc.tscn")
-@export var spawn_margin = 30;
+@export var spawn_margin = 1000;
 
 func _on_timer_timeout() -> void:
 	var npc = npc_scene.instantiate()
