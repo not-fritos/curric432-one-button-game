@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 	if holding:
 		Globals.TIME_MOD = slow_scale
 		charge = max(0.0, charge - drain_per_sec * delta)
-		bg_music.pitch_scale = lerp(0.75, 1.0, clamp(charge, 0.9, 1.0))
+		bg_music.pitch_scale = lerp(0.2, 1.0, charge)
 		_update_bar()
 
 		if charge <= 0.0:
@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 		if charge < 1.0:
 			charge = min(1.0, charge + refill_per_sec * delta)
 			_update_bar()
-		bg_music.pitch_scale = 1.0
+		bg_music.pitch_scale = lerp(1.0, 0.2, 1 - charge)
 
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event is InputEventKey and not event.echo:
