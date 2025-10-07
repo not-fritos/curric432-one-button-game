@@ -33,11 +33,11 @@ func _process(delta: float) -> void:
 		if charge <= 0.0:
 			Globals.TIME_MOD = 1.0
 		else:
-			roomba.SPEED = 0
+			roomba.SPEED = lerp(255, 0, charge)
 			roomba.rotate(rotate_speed * delta)
 	else:
 		Globals.TIME_MOD = 1.0
-		roomba.SPEED = 255
+		roomba.SPEED = lerp(0, 255, charge)
 		if charge < 1.0:
 			charge = min(1.0, charge + refill_per_sec * delta)
 			_update_bar()
